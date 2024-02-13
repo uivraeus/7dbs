@@ -18,3 +18,9 @@ Or after the `7dbs` database has been created:
 psql -d 7dbs
 ```
 
+Or just:
+
+```shell
+psql 7dbs
+```
+
