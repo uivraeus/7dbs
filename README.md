@@ -32,8 +32,19 @@ Running in "standalone mode" in a separate container with service name "hbase"
 
 ### How to access
 
-The "shell" can be started via `docker exec` into container. A convenience alias is defined to make this easier:
+The "shell" can be started via `docker exec` into container. Convenience alias/functions are defined to make this easier:
+
+Interactive mode:
 
 ```shell
 hbase-shell
 ```
+
+Non-interactive, i.e. run a script file:
+
+```shell
+hbase-shell-n /workspace/lab/hbase/script.rb
+```
+
+(Note that the repo root's `lab/` directory is mounted at `/workspace/lab/` inside the container)
+

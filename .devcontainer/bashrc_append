@@ -20,4 +20,7 @@ bind '"\e[B": history-search-forward'
 
 # HBase
 alias hbase-shell='docker exec -it 7dbs_devcontainer-hbase-1 hbase shell'
-
+hbase-shell-n() {
+    # $1 file path (within container, e.g. /workspace/lab/hbase/script.rb)
+    docker exec -it 7dbs_devcontainer-hbase-1 bash -c "cat $1 | hbase shell -n"
+}

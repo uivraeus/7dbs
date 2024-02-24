@@ -47,6 +47,7 @@ services:
       - "start-hbase.sh; tail -f /root/hbase-bin/logs/*.log"
     volumes:
       - hbase-data:/root/tmp
+      - ../lab:/workspace/lab
 
 volumes:
   postgres-data:
