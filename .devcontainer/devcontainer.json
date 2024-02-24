@@ -6,8 +6,19 @@
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {}
-	}
+		"ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"version": "latest",
+			"dockerDashComposeVersion": "v2"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
+			"jqVersion": "latest",
+			"yqVersion": "4",
+			"gojqVersion": "none",
+			"xqVersion": "none",
+			"jaqVersion": "none"
+		}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -17,11 +28,28 @@
 	// "forwardPorts": [3000, 5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	// Add some aliases, fix prompt etc.
+	"postCreateCommand": "cat ${containerWorkspaceFolder}/.devcontainer/bashrc_append >> ${HOME:?}/.bashrc",
 
 	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"donjayamanne.githistory",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+
+	// TODO/TBD: limit what's running? Risk of ending up with orphans if updated when already running
+	// "runServices": [
+	// 	"postgres",
+	// 	"hbase"
+	// ]
 }

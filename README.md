@@ -2,7 +2,7 @@
 
 ## PostgreSQL
 
-Database runs in separate container, with service name "postgres" (can be resolved has hostname)
+Database runs in separate container, with service name "postgres".
 
 Environment variables, e.g. PGUSER and PGPASSWORD, prepared to match defaults for the database server.
 
@@ -26,4 +26,14 @@ The [contrib](https://www.postgresql.org/docs/current/contrib.html) content is a
 CREATE EXTENSION fuzzystrmatch;
 ```
 
+## HBase
 
+Running in "standalone mode" in a separate container with service name "hbase"
+
+### How to access
+
+The "shell" can be started via `docker exec` into container. A convenience alias is defined to make this easier:
+
+```shell
+hbase-shell
+```

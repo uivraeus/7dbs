@@ -38,5 +38,16 @@ services:
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
+  hbase:
+    image: uivraeus/hbase_docker:2.5.7
+    restart: unless-stopped
+    command:
+      - "/bin/bash"
+      - "-c"
+      - "start-hbase.sh; tail -f /root/hbase-bin/logs/*.log"
+    volumes:
+      - hbase-data:/root/tmp
+
 volumes:
   postgres-data:
+  hbase-data:
