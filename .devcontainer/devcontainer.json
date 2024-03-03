@@ -17,6 +17,13 @@
 			"gojqVersion": "none",
 			"xqVersion": "none",
 			"jaqVersion": "none"
+		},
+		"ghcr.io/devcontainers/features/aws-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": true,
+			"version": "3.11"
 		}
 	},
 
