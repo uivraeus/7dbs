@@ -7,6 +7,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
     && apt-get -y install --no-install-recommends postgresql-client-16
     
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && export MONGODB_TOOL_VER=mongodb-database-tools-debian11-x86_64-100.9.4 \
+    && curl -s -o /tmp/${MONGODB_TOOL_VER}.deb https://fastdl.mongodb.org/tools/db/${MONGODB_TOOL_VER}.deb \
+    && chmod o+r /tmp/${MONGODB_TOOL_VER}.deb \
+    && apt-get -y install /tmp/${MONGODB_TOOL_VER}.deb \
+    && rm -rf rm -rf /tmp/${MONGODB_TOOL_VER}.deb
 
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
