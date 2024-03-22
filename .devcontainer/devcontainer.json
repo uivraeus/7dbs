@@ -48,7 +48,8 @@
 				"streetsidesoftware.code-spell-checker",
 				"donjayamanne.githistory",
 				"ms-azuretools.vscode-docker",
-				"mongodb.mongodb-vscode"
+				"mongodb.mongodb-vscode",
+				"humao.rest-client"
 			]
 		}
 	},
@@ -57,9 +58,10 @@
 	// "remoteUser": "root"
 
 	// TODO/TBD: limit what's running? Risk of ending up with orphans if updated when already running
-	// "runServices": [
-	// 	"postgres",
-	// 	"hbase",
-	//  "mongodb"
-	// ]
+	"runServices": [
+		"postgres",
+		"hbase",
+	  "mongodb",
+		"couchdb"
+	]
 }

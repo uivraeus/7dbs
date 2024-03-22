@@ -64,7 +64,20 @@ services:
     
     network_mode: service:app
 
+  couchdb:
+    image: couchdb:latest
+    restart: unless-stopped
+    volumes:
+      - couchdb-data:/opt/couchdb/data
+      - ./couchdb_local.ini:/opt/couchdb/etc/local.ini
+    environment:
+      COUCHDB_USER: couch
+      COUCHDB_PASSWORD: couch
+    
+    network_mode: service:app
+
 volumes:
   postgres-data:
   hbase-data:
   mongodb-data:
+  couchdb-data:
