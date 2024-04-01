@@ -1,5 +1,8 @@
 {
   "cSpell.words": [
+    "cypher",
     "Fauxton"
-  ]
+  ],
+  "neo4j.user": "",
+  "neo4j.password": ""
 }

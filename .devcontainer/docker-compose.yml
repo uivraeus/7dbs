@@ -76,8 +76,20 @@ services:
     
     network_mode: service:app
 
+  neo4j:
+    image: neo4j:enterprise
+    restart: unless-stopped
+    volumes:
+      - neo4j-data:/data
+    environment:
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: yes
+      NEO4J_AUTH: none
+    
+    network_mode: service:app
+
 volumes:
   postgres-data:
   hbase-data:
   mongodb-data:
   couchdb-data:
+  neo4j-data:
