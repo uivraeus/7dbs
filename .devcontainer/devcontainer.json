@@ -67,6 +67,7 @@
 		"hbase",
 	  "mongodb",
 		"couchdb",
-		"neo4j"
+		"neo4j",
+		"redis"
 	]
 }

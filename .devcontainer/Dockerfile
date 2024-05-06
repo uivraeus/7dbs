@@ -5,7 +5,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends postgresql-common \
     && /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y \
     && apt-get update \
-    && apt-get -y install --no-install-recommends postgresql-client-16
+    && apt-get -y install --no-install-recommends postgresql-client-16 \
+    && apt-get -y install --no-install-recommends redis-tools
     
 RUN export DEBIAN_FRONTEND=noninteractive \
     && export MONGODB_TOOL_VER=mongodb-database-tools-debian11-x86_64-100.9.4 \

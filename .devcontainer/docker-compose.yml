@@ -87,9 +87,20 @@ services:
     
     network_mode: service:app
 
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    #volumes:
+    #  - redis-data:/data
+    #command: redis-server --save 60 1 --loglevel warning
+    
+    network_mode: service:app
+
+
 volumes:
   postgres-data:
   hbase-data:
   mongodb-data:
   couchdb-data:
   neo4j-data:
+  #redis-data:
