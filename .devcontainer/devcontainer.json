@@ -65,7 +65,7 @@
 	"runServices": [
 		"postgres",
 		"hbase",
-	  "mongodb",
+		"mongodb",
 		"couchdb",
 		"neo4j",
 		"redis"
