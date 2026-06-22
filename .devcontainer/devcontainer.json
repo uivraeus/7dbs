@@ -26,7 +26,7 @@
 			"version": "3.11"
 		},
 		"ghcr.io/devcontainers-contrib/features/mongosh-homebrew:1": {},
-		"ghcr.io/devcontainers/features/ruby:1": {
+		"ghcr.io/devcontainers/features/ruby:2": {
 			"version": "latest"
 		}
 	},
